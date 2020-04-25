@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Electron!</title>
+  <style>
+    body {
+      font-family: PingFang SC;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .block {
+      background: #000;
+      min-height: 200px;
+      max-height: 50vw;
+      overflow-y: scroll;
+      color: azure;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .space-top {
+      margin-top: 20px;
+    }
+
+    .container {
+      width: 40vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .container>div {
+      background-color: #8ca0ff;
+      width: 20vh;
+      height: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div>APP:</div>
+    <div id="version">vX.Y.Z</div>
+    <div>NodeJS:</div>
+    <div>
+      <script>
+        document.write(process.versions.node)
+      </script>
+    </div>
+    <div>Chrome:</div>
+    <div>
+      <script>
+        document.write(process.versions.chrome)
+      </script>
+    </div>
+    <div>Electron:</div>
+    <div>
+      <script>
+        document.write(process.versions.electron)
+      </script>
+    </div>
+  </div>
+
+  <div class="caption space-top">Logs</div>
+  <div class="block" id='message'></div>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+# https://github.com/electron-userland/electron-builder/issues/1505#issuecomment-318330077
+# owner: yanlee26
+url: http://127.0.0.1:5000/
+provider: generic

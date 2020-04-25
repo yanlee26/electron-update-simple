@@ -1,0 +1,40 @@
+{
+  "name": "electron-update-simple",
+  "version": "0.1.0",
+  "description": "A simple of usage of electron-builder on mac",
+  "main": "main.js",
+  "author": "yanlee",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "server": "http-server -p 5000 ./dist",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "productName": "Electron-simple",
+    "appId": "com.yan.test",
+    "releaseInfo": {
+      "releaseNotes": "test"
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://127.0.0.1:5000/"
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.business"
+    }
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^8.2.3",
+    "electron-builder": "^22.5.1"
+  },
+  "dependencies": {
+    "electron-is-dev": "^1.2.0",
+    "electron-log": "^4.1.1",
+    "electron-updater": "^4.2.5"
+  }
+}
