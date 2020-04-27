@@ -34,7 +34,7 @@ if (process.platform === 'darwin') {
                 message: '无可用更新',
                 title: '无可用更新',
                 detail: `Version ${app.getVersion()} 已是最新版本`
-              }, () => {})
+              })
             })
             hasRegistListner = true
           }

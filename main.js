@@ -90,7 +90,9 @@ autoUpdater.on('update-available', (ev, info) => {
     title: '更新提示',
     message: ev.releaseNotes,
     buttons: ['下载更新', '跳过'],
-  }, (index) => {
+  }).then(({
+    response: index
+  }) => {
     if (index === 0) {
       autoUpdater.downloadUpdate()
       showUpdateMenuItem('downloading')
@@ -112,7 +114,7 @@ autoUpdater.on('error', (ev, err) => {
     message: '检测更新发生异常',
     title: '更新异常',
     detail: err,
-  }, () => {})
+  })
 })
 autoUpdater.on('download-progress', (ev, progressObj) => {
   sendStatusToWindow('下载进度')
@@ -130,7 +132,9 @@ autoUpdater.on('update-downloaded', (ev, info) => {
     title: '更新下载完成',
     message: '更新下载完成, 立即更新?',
     buttons: ['立即更新', '稍等']
-  }, (index) => {
+  }).then(({
+    response: index
+  }) => {
     if (index === 0) {
       autoUpdater.quitAndInstall()
     }

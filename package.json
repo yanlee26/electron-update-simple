@@ -1,6 +1,6 @@
 {
   "name": "electron-update-simple",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "A simple of usage of electron-builder on mac",
   "main": "main.js",
   "author": "yanlee",
@@ -8,7 +8,7 @@
     "start": "electron .",
     "pack": "electron-builder --dir",
     "server": "http-server -p 5000 ./dist",
-    "dist": "rm -rf dist && electron-builder",
+    "pack-mac": "rm -rf dist && electron-builder",
     "postinstall": "electron-builder install-app-deps"
   },
   "build": {
